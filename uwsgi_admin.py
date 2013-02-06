@@ -89,9 +89,9 @@ def template_view(template='main'):
         return StringIO.StringIO("""
 {{extend 'layout.html'}}
 
-{{=LOAD('default', 'info.load', ajax=True, timeout=5000, times='Infinity')}}
+{{=LOAD('uwsgi_admin', 'info.load', ajax=True, timeout=5000, times='Infinity')}}
 
-{{=LOAD('default', 'reload_uwsgi.load', ajax=True)}}
+{{=LOAD('uwsgi_admin', 'reload_uwsgi.load', ajax=True)}}
         """)
     elif template == 'info':
         return StringIO.StringIO("""
